@@ -1,0 +1,96 @@
+---
+title: "Lab 01: linear algebra + computing review"
+subtitle: "Ikea furniture"
+author: "Your name + Your teammates' names"
+date: "August 31, 2026"
+format: pdf
+editor: visual
+---
+
+## Setup
+
+Load packages and data:
+
+```{r}
+#| label: load-pkg-data
+#| message: false
+#| warning: false
+
+
+library(tidyverse)
+library(tidymodels)
+ikea <- read_csv("data/ikea.csv")
+```
+
+\pagebreak
+
+## Linear algebra review
+
+\[Delete the placeholders for Exercises 1 - 6 if you are submitting handwritten responses for these exercises\]
+
+### Exercise 1
+
+...
+
+\pagebreak
+
+### Exercise 2
+
+...
+
+\pagebreak
+
+### Exercise 3
+
+...
+
+\pagebreak
+
+### Exercise 4
+
+...
+
+\pagebreak
+
+### Exercise 5
+
+...
+
+\pagebreak
+
+### Exercise 6
+
+...
+
+\pagebreak
+
+## Computing review
+
+### Exercise 7
+
+```{r}
+#| label: ex-07
+
+# add code here
+
+```
+
+...
+
+\pagebreak
+
+### Exercise 8
+
+...
+
+\pagebreak
+
+### Exercise 9
+
+...
+
+\pagebreak
+
+### Exercise 10
+
+...
