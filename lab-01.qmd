@@ -121,7 +121,7 @@ ggplot(data = ikea_sub, aes(x = width, y = price_usd)) +
   geom_point() +
     labs(x = "Width of Furniture (in cm)",
        y = "Price in USD", 
-       title = "Relationship Between Price (in USD) and Width (in cm) of Ikea Furniture in April 2020")
+       title = "Relationship Between Price (in USD) and Width (in cm) of \nIkea Furniture in April 2020")
 ```
 ```{R}
 #| fig-cap: "As the width increases, the price of sofas and armchairs increase at a faster rate compared to bookcases and shelving units"
@@ -129,8 +129,8 @@ ggplot(data = ikea_sub, aes(x = width, y = price_usd, shape = category, color = 
   geom_point() +
     labs(x = "Width of Furniture (in cm)",
        y = "Price in USD", 
-       title = "Relationship Between Price (in USD) and Width (in cm) of Ikea
-       Furniture in April 2020",
+       title = "Relationship Between Price (in USD) and Width (in cm) 
+       of \nIkea Furniture in April 2020",
        color = "Furniture Category", 
        shape = "Furniture Category")
 ```
