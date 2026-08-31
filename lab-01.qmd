@@ -22,7 +22,6 @@ library(tidymodels)
 ikea <- read_csv("data/ikea.csv")
 ```
 
-
 \pagebreak
 
 ## Linear algebra review
@@ -90,10 +89,7 @@ ggplot(data = ikea, aes(x = price_usd)) +
 
 ### Exercise 8
 
-The median is more representative of the center than the mean as the distribution
-is right skewed with a few outliers with really high cost. This means that the mean would be "stretched" higher due to those really high cost items, when in 
-reality there are only a few of them. For median, those outliers have significantly less impact, therefore the median is a better representative of the
-center of the distribution. 
+The median is more representative of the center than the mean as the distribution is right skewed with a few outliers with really high cost. This means that the mean would be "stretched" higher due to those really high cost items, when in reality there are only a few of them. For median, those outliers have significantly less impact, therefore the median is a better representative of the center of the distribution.
 
 \pagebreak
 
@@ -107,10 +103,35 @@ ikea_sub <- ikea |>
 ikea_sub <- ikea_sub |>
   drop_na(width, price_usd)
 ```
+
 There are 765 observations with 13 variables.
+The advantage of deleting all observations with one or more missing variables is 
+that we don't have to deal with NA values during computing of data. A disadvantage
+would be that we have a smaller sample size
+as we are completely removing the row, which could lead to things such as 
+decreasing power. 
 
 \pagebreak
 
 ### Exercise 10
 
+```{R}
+#| fig-cap: "There is a positive nonlinear relationship between Price and Width of Ikea Furniture"
+ggplot(data = ikea_sub, aes(x = width, y = price_usd)) +
+  geom_point() +
+    labs(x = "Width of Furniture (in cm)",
+       y = "Price in USD", 
+       title = "Relationship Between Price (in USD) and Width (in cm) of Ikea Furniture in April 2020")
+```
+```{R}
+#| fig-cap: "As the width increases, the price of sofas and armchairs increase at a faster rate compared to bookcases and shelving units"
+ggplot(data = ikea_sub, aes(x = width, y = price_usd, shape = category, color = category)) +
+  geom_point() +
+    labs(x = "Width of Furniture (in cm)",
+       y = "Price in USD", 
+       title = "Relationship Between Price (in USD) and Width (in cm) of Ikea
+       Furniture in April 2020",
+       color = "Furniture Category", 
+       shape = "Furniture Category")
+```
 ...
