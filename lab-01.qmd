@@ -1,7 +1,7 @@
 ---
 title: "Lab 01: linear algebra + computing review"
 subtitle: "Ikea furniture"
-author: "Your name + Your teammates' names"
+author: Josh, Lida, Ava
 date: "August 31, 2026"
 format: pdf
 editor: visual
@@ -22,6 +22,7 @@ library(tidymodels)
 ikea <- read_csv("data/ikea.csv")
 ```
 
+
 \pagebreak
 
 ## Linear algebra review
@@ -30,37 +31,37 @@ ikea <- read_csv("data/ikea.csv")
 
 ### Exercise 1
 
-...
+Attached at end of pdf
 
 \pagebreak
 
 ### Exercise 2
 
-...
+Attached at end of pdf
 
 \pagebreak
 
 ### Exercise 3
 
-...
+Attached at end of pdf
 
 \pagebreak
 
 ### Exercise 4
 
-...
+Attached at end of pdf
 
 \pagebreak
 
 ### Exercise 5
 
-...
+Attached at end of pdf
 
 \pagebreak
 
 ### Exercise 6
 
-...
+Attached at end of pdf
 
 \pagebreak
 
@@ -70,24 +71,43 @@ ikea <- read_csv("data/ikea.csv")
 
 ```{r}
 #| label: ex-07
-
-# add code here
+library(tidyverse) 
+library(knitr)
+ikea <- read_csv("data/ikea.csv")
 
 ```
 
-...
+```{R}
+ggplot(data = ikea, aes(x = price_usd)) +
+  geom_histogram() +
+    labs(x = "Price in Dollars",
+       y = "Number of Products", 
+       title = "Distribution of Price (in Dollars) of Ikea Furniture 
+       in April 2020")
+```
 
 \pagebreak
 
 ### Exercise 8
 
-...
+The median is more representative of the center than the mean as the distribution
+is right skewed with a few outliers with really high cost. This means that the mean would be "stretched" higher due to those really high cost items, when in 
+reality there are only a few of them. For median, those outliers have significantly less impact, therefore the median is a better representative of the
+center of the distribution. 
 
 \pagebreak
 
 ### Exercise 9
 
-...
+```{R}
+ikea_sub <- ikea |>
+  filter(category %in% c( "Sofas & armchairs",
+                       "Bookcases & shelving units"))
+
+ikea_sub <- ikea_sub |>
+  drop_na(width, price_usd)
+```
+There are 765 observations with 13 variables.
 
 \pagebreak
 
